@@ -164,15 +164,15 @@
                 <ul class="space-y-2">
                     <li class="flex items-center text-gray-400 text-sm">
                         <i class="fas fa-envelope mr-3 text-primary"></i>
-                        alex@portfolio.com
+                        support@aldids.ng
                     </li>
                     <li class="flex items-center text-gray-400 text-sm">
                         <i class="fas fa-phone mr-3 text-primary"></i>
-                        +1 (555) 123-4567
+                        +2348061559532
                     </li>
                     <li class="flex items-center text-gray-400 text-sm">
                         <i class="fas fa-map-marker-alt mr-3 text-primary"></i>
-                        San Francisco, CA
+                        Taraba State Nigeria
                     </li>
                     <li class="flex items-center text-gray-400 text-sm">
                         <i class="fas fa-clock mr-3 text-primary"></i>

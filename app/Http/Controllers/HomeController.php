@@ -9,18 +9,15 @@ class HomeController extends Controller
         $data = [
             'hero' => [
                 'name' => config('app.name'),
-                'title' => 'Full Stack Developer & UI/UX Designer',
+                'title' => 'Full Stack Developer',
                 'subtitle' => 'Crafting digital experiences with modern technologies',
                 'description' => 'I specialize in building scalable web applications using React, Node.js, and Laravel. With 5+ years of experience, I help businesses transform their ideas into powerful digital solutions.',
                 'image' => '/images/alpha.jpg',
-                'resume_url' => '#',
+                'resume_url' => '/',
                 'github_url' => 'https://github.com/alexrodriguez',
                 'linkedin_url' => 'https://linkedin.com/in/alexrodriguez',
-<<<<<<< HEAD
                 'email' => 'suport@aldids.ng',
-=======
                 'email' => 'alex@portfolio.com',
->>>>>>> 1c071947c01e20de4d0477da63c7e7261070c8cd
             ],
             'stats' => [
                 ['number' => '50+', 'label' => 'Projects Completed'],
@@ -55,20 +52,17 @@ class HomeController extends Controller
                 ],
             ],
             'skills' => [
-<<<<<<< HEAD
                 ['name' => 'Laravel/Filament', 'level' => 88, 'category' => 'Backend'],
                 ['name' => 'Flutter/React Native', 'level' => 90, 'category' => 'Mobile'],
                 ['name' => 'Livewire/JQuery/Javascript', 'level' => 87, 'category' => 'Frontend'],
                 ['name' => 'MySQL', 'level' => 83, 'category' => 'Database'],
                 ['name' => 'HTML/CSS', 'level' => 80, 'category' => 'Frontend'],
-=======
                 ['name' => 'Laravel/Filament', 'level' => 88, 'category' => 'Frontend'],
                 ['name' => 'Flutter/React Native', 'level' => 90, 'category' => 'Backend'],
                 ['name' => 'Livewire', 'level' => 87, 'category' => 'Backend'],
                 ['name' => 'JQuery', 'level' => 85, 'category' => 'Backend'],
                 ['name' => 'MySQL', 'level' => 83, 'category' => 'Database'],
                 ['name' => 'HTML/CSS', 'level' => 80, 'category' => 'Database'],
->>>>>>> 1c071947c01e20de4d0477da63c7e7261070c8cd
             ],
             'projects' => [
                 [

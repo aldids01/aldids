@@ -289,7 +289,7 @@
                             </div>
                             <div>
                                 <h4 class="text-white font-semibold">Phone</h4>
-                                <p class="text-gray-400">+1 (555) 123-4567</p>
+                                <p class="text-gray-400">+2348061559932</p>
                             </div>
                         </div>
 
@@ -299,7 +299,7 @@
                             </div>
                             <div>
                                 <h4 class="text-white font-semibold">Location</h4>
-                                <p class="text-gray-400">San Francisco, CA</p>
+                                <p class="text-gray-400">Taraba State, Gembu</p>
                             </div>
                         </div>
 
