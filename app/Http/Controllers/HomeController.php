@@ -57,12 +57,6 @@ class HomeController extends Controller
                 ['name' => 'Livewire/JQuery/Javascript', 'level' => 87, 'category' => 'Frontend'],
                 ['name' => 'MySQL', 'level' => 83, 'category' => 'Database'],
                 ['name' => 'HTML/CSS', 'level' => 80, 'category' => 'Frontend'],
-                ['name' => 'Laravel/Filament', 'level' => 88, 'category' => 'Frontend'],
-                ['name' => 'Flutter/React Native', 'level' => 90, 'category' => 'Backend'],
-                ['name' => 'Livewire', 'level' => 87, 'category' => 'Backend'],
-                ['name' => 'JQuery', 'level' => 85, 'category' => 'Backend'],
-                ['name' => 'MySQL', 'level' => 83, 'category' => 'Database'],
-                ['name' => 'HTML/CSS', 'level' => 80, 'category' => 'Database'],
             ],
             'projects' => [
                 [
