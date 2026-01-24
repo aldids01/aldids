@@ -21,8 +21,8 @@
             <flux:spacer />
 
             <flux:sidebar.nav>
-                <flux:sidebar.item icon="book-open-text" href="/" wire:navigate>
-                    {{ __('Go back to Website') }}
+                <flux:sidebar.item icon="book-open-text" href="/">
+                    {{ __('back to Website') }}
                 </flux:sidebar.item>
             </flux:sidebar.nav>
 

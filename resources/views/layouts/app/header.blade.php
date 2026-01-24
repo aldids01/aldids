@@ -26,7 +26,7 @@
                         class="h-10 max-lg:hidden [&>div>svg]:size-5"
                         icon="book-open-text"
                         href="/"
-                        label="Go back to Website"
+                        label="back to Website"
                     />
                 </flux:tooltip>
             </flux:navbar>
