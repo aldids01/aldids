@@ -1,0 +1,114 @@
+@import 'tailwindcss';
+@import '../../vendor/livewire/flux/dist/flux.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../vendor/livewire/flux-pro/stubs/**/*.blade.php';
+@source '../../vendor/livewire/flux/stubs/**/*.blade.php';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* LaraCopilot Primary Palette */
+    --color-brand-primary: #6366f1;   /* Indigo 500 */
+    --color-brand-secondary: #06b6d4; /* Cyan 500 */
+    --color-brand-deep: #0f172a;      /* Slate 900 - Background */
+
+    /* Tinted Grays (Indigo-Slate Base) */
+    --color-zinc-50: var(--color-zinc-950);  /* Extremely light indigo tint */
+    --color-zinc-100: #ebf0fe;
+    --color-zinc-200: #dce4ff;
+    --color-zinc-300: #b2c1ff;
+    --color-zinc-400: #91a3ef;
+    --color-zinc-500: #6366f1; /* Your Primary matches 500 perfectly */
+    --color-zinc-600: #4f46e5;
+    --color-zinc-700: #3730a3;
+    --color-zinc-800: #1e1b4b; /* Deep Indigo-Black */
+    --color-zinc-900: #0f1035; /* Darker Dashboard Navy */
+    --color-zinc-950: #05051a; /* Almost black with indigo soul */
+
+    /* The core colors you requested */
+    --color-primary: #6366f1;
+    --color-secondary: #8b5cf6;
+    /*--color-accent: var(--color-zinc-950);*/
+
+    --color-accent: var(--color-neutral-800);
+    --color-accent-content: var(--color-neutral-800);
+    --color-accent-foreground: var(--color-white);
+}
+
+@layer theme {
+    .dark {
+        /* Dashboard Dark Mode logic */
+        --color-accent: var(--color-zinc-50);
+        --color-accent-foreground: var(--color-zinc-950);
+
+        /* The specific "Deep Navy" background seen in LaraCopilot */
+        background-color: var(--color-zinc-950);
+    }
+}
+
+@layer base {
+
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+}
+
+[data-flux-field]:not(ui-radio, ui-checkbox) {
+    @apply grid gap-2;
+}
+
+[data-flux-label] {
+    @apply  !mb-0 !leading-tight;
+}
+
+input:focus[data-flux-control],
+textarea:focus[data-flux-control],
+select:focus[data-flux-control] {
+    @apply outline-hidden ring-2 ring-accent ring-offset-2 ring-offset-accent-foreground;
+}
+.gradient-text {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.skill-bar {
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-progress {
+    transition: width 2s ease-in-out;
+}
+/* \[:where(&)\]:size-4 {
+    @apply size-4;
+} */
