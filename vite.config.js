@@ -12,18 +12,6 @@ export default defineConfig({
         }),
         tailwindcss(),
     ],
-    theme:{
-        extend: {
-            colors: {
-                primary: '#6366f1',
-                secondary: '#8b5cf6',
-                accent: '#06b6d4'
-            },
-            fontFamily: {
-                sans: ['Inter', 'system-ui', 'sans-serif']
-            }
-        }
-    },
     server: {
         cors: true,
         watch: {
