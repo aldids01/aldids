@@ -315,7 +315,7 @@
                     </div>
 
                     <div class="pt-8">
-                        <h4 class="text-white font-semibold mb-4">Follow Me</h4>
+                        <h4 class="text-white font-semibold mb-4">Follow Us</h4>
                         <div class="flex space-x-4">
                             <a href="{{ $data['hero']['github_url'] }}" class="bg-slate-700 hover:bg-primary p-3 rounded-full transition-colors duration-300">
                                 <i class="fab fa-github text-white text-lg"></i>

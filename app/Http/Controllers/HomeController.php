@@ -17,7 +17,6 @@ class HomeController extends Controller
                 'github_url' => 'https://github.com/alexrodriguez',
                 'linkedin_url' => 'https://linkedin.com/in/alexrodriguez',
                 'email' => 'suport@aldids.ng',
-                'email' => 'alex@portfolio.com',
             ],
             'stats' => [
                 ['number' => '50+', 'label' => 'Projects Completed'],
