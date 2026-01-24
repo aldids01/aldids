@@ -78,7 +78,7 @@
     <section id="about" class="py-20 bg-gradient-to-r from-slate-800/50 to-slate-900/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold gradient-text mb-4">About Me</h2>
+                <h2 class="text-4xl lg:text-5xl font-bold gradient-text mb-4">About Us</h2>
                 <p class="text-xl text-gray-400 max-w-3xl mx-auto">
                     Passionate developer with a keen eye for design and a love for creating exceptional digital experiences
                 </p>
@@ -128,7 +128,7 @@
     <section id="services" class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold gradient-text mb-4">What I Do</h2>
+                <h2 class="text-4xl lg:text-5xl font-bold gradient-text mb-4">What We Do</h2>
                 <p class="text-xl text-gray-400 max-w-3xl mx-auto">
                     I offer comprehensive development services to help bring your digital ideas to life
                 </p>
