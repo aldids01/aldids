@@ -27,7 +27,7 @@
                     <!-- CTA Buttons -->
                     <div class="flex flex-wrap gap-4">
                         <a href="#projects" class="bg-gradient-to-r from-primary to-secondary px-8 py-4 rounded-full text-white font-semibold hover:from-secondary hover:to-primary transition-all duration-300 hover-glow">
-                            View My Work
+                            View Our Work
                         </a>
                     </div>
 
