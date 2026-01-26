@@ -29,9 +29,6 @@
                         <a href="#projects" class="bg-gradient-to-r from-primary to-secondary px-8 py-4 rounded-full text-white font-semibold hover:from-secondary hover:to-primary transition-all duration-300 hover-glow">
                             View My Work
                         </a>
-                        <a href="{{ $data['hero']['resume_url'] }}" class="border-2 border-primary text-primary px-8 py-4 rounded-full font-semibold hover:bg-primary hover:text-white transition-all duration-300">
-                            Download Resume
-                        </a>
                     </div>
 
                     <!-- Social Links -->
@@ -86,7 +83,7 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="space-y-6">
-                    <h3 class="text-3xl font-bold text-white mb-6">My Journey</h3>
+                    <h3 class="text-3xl font-bold text-white mb-6">Our Journey</h3>
                     <p class="text-gray-400 text-lg leading-relaxed">
                         With over 5 years of experience in web development, We've had the privilege of working with startups,
                         agencies, and established companies to bring their digital visions to life. Our expertise spans across
