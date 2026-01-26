@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ config('app.name') }}</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -119,17 +120,14 @@
                 <h3 class="text-xl font-bold gradient-text">{{ config('app.name') }}</h3>
                 <p class="text-gray-400 text-sm">Full Stack Developer & UI/UX Designer crafting digital experiences with modern technologies and innovative solutions.</p>
                 <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                    <a href="https://github.com/aldids01" class="text-gray-400 hover:text-primary transition-colors">
                         <i class="fab fa-github text-xl"></i>
                     </a>
-                    <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                    <a href="https://www.linkedin.com/in/aldids" class="text-gray-400 hover:text-primary transition-colors">
                         <i class="fab fa-linkedin text-xl"></i>
                     </a>
-                    <a href="#" class="text-gray-400 hover:text-primary transition-colors">
-                        <i class="fab fa-twitter text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-primary transition-colors">
-                        <i class="fab fa-dribbble text-xl"></i>
+                    <a href="https://wa.me/+2348080990067" class="text-gray-400 hover:text-primary transition-colors">
+                        <i class="fab fa-whatsapp text-xl"></i>
                     </a>
                 </div>
             </div>

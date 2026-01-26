@@ -42,8 +42,8 @@
             <!-- Remember Me -->
             <flux:checkbox name="remember" :label="__('Remember me')" :checked="old('remember')" />
 
-            <div class="flex items-center justify-end">
-                <flux:button variant="primary" type="submit" class="w-full" data-test="login-button">
+            <div class="flex items-center justify-end text-white">
+                <flux:button variant="primary" type="submit" class="w-full bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 font-sans" data-test="login-button">
                     {{ __('Log in') }}
                 </flux:button>
             </div>
@@ -51,7 +51,7 @@
 
             <div class="space-x-1 text-sm text-center rtl:space-x-reverse text-zinc-600 dark:text-zinc-400">
 {{--                <span>{{ __('Don\'t have an account?') }}</span>--}}
-                <flux:link href="/" wire:navigate>{{ __('Back to website') }}</flux:link>
+                <flux:link href="/">{{ __('Back to website') }}</flux:link>
             </div>
     </div>
 </x-layouts::auth>

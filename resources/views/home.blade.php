@@ -42,11 +42,11 @@
                         <a href="{{ $data['hero']['linkedin_url'] }}" class="text-gray-400 hover:text-primary transition-colors text-2xl">
                             <i class="fab fa-linkedin"></i>
                         </a>
+                        <a href="{{ $data['hero']['whatsapp'] }}" class="text-gray-400 hover:text-primary transition-colors text-2xl">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
                         <a href="mailto:{{ $data['hero']['email'] }}" class="text-gray-400 hover:text-primary transition-colors text-2xl">
                             <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-primary transition-colors text-2xl">
-                            <i class="fab fa-twitter"></i>
                         </a>
                     </div>
                 </div>
@@ -56,7 +56,7 @@
                     <div class="relative z-10">
                         <img src="{{ $data['hero']['image'] }}"
                              alt="{{ $data['hero']['name'] }}"
-                             class="w-80 h-80 lg:w-96 lg:h-96 rounded-full mx-auto object-cover border-8 border-primary/20 shadow-2xl animate-float">
+                             class="w-80 h-80 lg:w-96 lg:h-96 mx-auto object-cover border-8 border-primary/20 shadow-2xl animate-float">
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-r from-primary/30 to-secondary/30 rounded-full blur-3xl"></div>
                 </div>
@@ -88,12 +88,12 @@
                 <div class="space-y-6">
                     <h3 class="text-3xl font-bold text-white mb-6">My Journey</h3>
                     <p class="text-gray-400 text-lg leading-relaxed">
-                        With over 5 years of experience in web development, I've had the privilege of working with startups,
-                        agencies, and established companies to bring their digital visions to life. My expertise spans across
+                        With over 5 years of experience in web development, We've had the privilege of working with startups,
+                        agencies, and established companies to bring their digital visions to life. Our expertise spans across
                         modern frontend frameworks, robust backend systems, and intuitive user experience design.
                     </p>
                     <p class="text-gray-400 text-lg leading-relaxed">
-                        I believe in writing clean, maintainable code and creating solutions that not only meet business
+                        We believe in writing clean, maintainable code and creating solutions that not only meet business
                         requirements but also provide exceptional user experiences. Every project is an opportunity to
                         learn something new and push the boundaries of what's possible.
                     </p>
@@ -130,7 +130,7 @@
             <div class="text-center mb-16">
                 <h2 class="text-4xl lg:text-5xl font-bold gradient-text mb-4">What We Do</h2>
                 <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-                    I offer comprehensive development services to help bring your digital ideas to life
+                    We offer comprehensive development services to help bring your digital ideas to life
                 </p>
             </div>
 
@@ -158,7 +158,7 @@
             <div class="text-center mb-16">
                 <h2 class="text-4xl lg:text-5xl font-bold gradient-text mb-4">Featured Projects</h2>
                 <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-                    A showcase of my recent work and the technologies I love working with
+                    A showcase of our recent work and the technologies we love working with
                 </p>
             </div>
 
@@ -225,7 +225,7 @@
             <div class="text-center mb-16">
                 <h2 class="text-4xl lg:text-5xl font-bold gradient-text mb-4">Client Testimonials</h2>
                 <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-                    What my clients say about working with me
+                    What our clients say about working with us
                 </p>
             </div>
 
@@ -263,7 +263,7 @@
             <div class="text-center mb-16">
                 <h2 class="text-4xl lg:text-5xl font-bold gradient-text mb-4">Let's Work Together</h2>
                 <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-                    Ready to start your next project? Let's discuss how I can help bring your ideas to life
+                    Ready to start your next project? Let's discuss how we can help bring your ideas to life
                 </p>
             </div>
 
@@ -323,10 +323,10 @@
                             <a href="{{ $data['hero']['linkedin_url'] }}" class="bg-slate-700 hover:bg-primary p-3 rounded-full transition-colors duration-300">
                                 <i class="fab fa-linkedin text-white text-lg"></i>
                             </a>
-                            <a href="#" class="bg-slate-700 hover:bg-primary p-3 rounded-full transition-colors duration-300">
-                                <i class="fab fa-twitter text-white text-lg"></i>
+                            <a href="{{ $data['hero']['whatsapp'] }}" class="bg-slate-700 hover:bg-primary p-3 rounded-full transition-colors duration-300">
+                                <i class="fab fa-whatsapp text-white text-lg"></i>
                             </a>
-                            <a href="#" class="bg-slate-700 hover:bg-primary p-3 rounded-full transition-colors duration-300">
+                            <a href="/" class="bg-slate-700 hover:bg-primary p-3 rounded-full transition-colors duration-300">
                                 <i class="fab fa-dribbble text-white text-lg"></i>
                             </a>
                         </div>

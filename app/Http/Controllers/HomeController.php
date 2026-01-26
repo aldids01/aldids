@@ -11,11 +11,12 @@ class HomeController extends Controller
                 'name' => config('app.name'),
                 'title' => 'Full Stack Developer',
                 'subtitle' => 'Crafting digital experiences with modern technologies',
-                'description' => 'I specialize in building scalable web applications using React, Node.js, and Laravel. With 5+ years of experience, I help businesses transform their ideas into powerful digital solutions.',
-                'image' => '/images/alpha.jpg',
+                'description' => 'We specialize in building scalable web applications using PHP, and Laravel. With 5+ years of experience, We help businesses transform their ideas into powerful digital solutions.',
+                'image' => '/apple-touch-icon.png',
                 'resume_url' => '/',
-                'github_url' => 'https://github.com/alexrodriguez',
-                'linkedin_url' => 'https://linkedin.com/in/alexrodriguez',
+                'github_url' => 'https://github.com/aldids01',
+                'linkedin_url' => 'https://www.linkedin.com/in/aldids',
+                'whatsapp' => 'https://wa.me/+2348080990067',
                 'email' => 'support@aldids.ng',
             ],
             'stats' => [
@@ -28,8 +29,8 @@ class HomeController extends Controller
                 [
                     'icon' => '💻',
                     'title' => 'Web Development',
-                    'description' => 'Full-stack web applications using modern frameworks like React, Vue.js, Laravel, and Node.js with responsive design.',
-                    'technologies' => ['React', 'Laravel', 'Node.js', 'Vue.js'],
+                    'description' => 'Full-stack web applications using modern frameworks like React, Laravel with responsive design.',
+                    'technologies' => ['React', 'Laravel', 'PHP'],
                 ],
                 [
                     'icon' => '📱',
@@ -41,13 +42,13 @@ class HomeController extends Controller
                     'icon' => '🎨',
                     'title' => 'UI/UX Design',
                     'description' => 'User-centered design solutions with modern interfaces, wireframing, prototyping, and user experience optimization.',
-                    'technologies' => ['Figma', 'Adobe XD', 'Sketch', 'Principle'],
+                    'technologies' => ['Figma'],
                 ],
                 [
                     'icon' => '☁️',
                     'title' => 'Cloud Solutions',
                     'description' => 'Scalable cloud infrastructure setup and deployment using AWS, Google Cloud, and Docker containerization.',
-                    'technologies' => ['AWS', 'Google Cloud', 'Docker', 'Kubernetes'],
+                    'technologies' => ['Google Cloud', 'Docker'],
                 ],
             ],
             'skills' => [

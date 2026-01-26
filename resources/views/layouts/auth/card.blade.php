@@ -3,15 +3,15 @@
     <head>
         @include('partials.head')
     </head>
-    <body class="min-h-screen bg-neutral-100 antialiased dark:bg-linear-to-b dark:from-neutral-950 dark:to-neutral-900">
+    <body class="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 font-sans antialiased dark:bg-linear-to-b dark:from-neutral-950 dark:to-neutral-900">
         <div class="bg-muted flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10">
             <div class="flex w-full max-w-md flex-col gap-6">
-                <a href="{{ route('home') }}" class="flex flex-col items-center gap-2 font-medium" wire:navigate>
+                <a href="{{ route('home') }}" class="flex flex-col items-center gap-2 font-medium">
                     <span class="flex h-9 w-9 items-center justify-center rounded-md">
-                        <x-app-logo-icon class="size-9 fill-current text-black dark:text-white" />
+                        <x-app-logo-icon class="dark:text-white" />
                     </span>
 
-                    <span class="sr-only">{{ config('app.name', 'Laravel') }}</span>
+                    <span class="gradient-text p-2 border-1 border-accent-foreground rounded-lg">{{ config('app.name', 'Laravel') }}</span>
                 </a>
 
                 <div class="flex flex-col gap-6">
