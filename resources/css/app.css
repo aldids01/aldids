@@ -26,14 +26,14 @@
 /* Required by widgets */
 @import '../../vendor/filament/widgets/resources/css/index.css';
 
-@variant dark (&:where(.dark, .dark *));
+/*@variant dark (&:where(.dark, .dark *));*/
 @source '../views';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../vendor/livewire/flux-pro/stubs/**/*.blade.php';
 @source '../../vendor/livewire/flux/stubs/**/*.blade.php';
 
 
-@custom-variant dark (&:where(.dark, .dark *));
+/*@custom-variant dark (&:where(.dark, .dark *));*/
 
 
 @theme {
@@ -51,8 +51,8 @@
     --color-zinc-900: #171717;
     --color-zinc-950: #0a0a0a;
 
-    --color-accent: var(--color-neutral-800);
-    --color-accent-content: var(--color-neutral-800);
+    --color-accent: var(--color-white);
+    --color-accent-content: var(--color-white);
     --color-accent-foreground: var(--color-white);
 }
 
