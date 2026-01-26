@@ -16,23 +16,23 @@
                         {{ __('Dashboard') }}
                     </flux:sidebar.item>
 
-                    <flux:sidebar.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
+                    <flux:sidebar.item icon="home" :href="route('projects.index')" :current="request()->routeIs('projects.index')" wire:navigate>
                         {{ __('Projects') }}
                     </flux:sidebar.item>
 
-                    <flux:sidebar.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
+                    <flux:sidebar.item icon="home" :href="route('skills.index')" :current="request()->routeIs('skills.index')" wire:navigate>
                         {{ __('Skills') }}
                     </flux:sidebar.item>
 
-                    <flux:sidebar.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
+                    <flux:sidebar.item icon="home" :href="route('experiences.index')" :current="request()->routeIs('experiences.index')" wire:navigate>
                         {{ __('Experience') }}
                     </flux:sidebar.item>
 
-                    <flux:sidebar.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
+                    <flux:sidebar.item icon="home" :href="route('testimonials.index')" :current="request()->routeIs('testimonials.index')" wire:navigate>
                         {{ __('Testimonials') }}
                     </flux:sidebar.item>
 
-                    <flux:sidebar.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
+                    <flux:sidebar.item icon="home" :href="route('contacts.index')" :current="request()->routeIs('contacts.index')" wire:navigate>
                         {{ __('Contacts') }}
                     </flux:sidebar.item>
 
@@ -49,7 +49,7 @@
             <flux:spacer />
 
             <flux:sidebar.nav>
-                <flux:sidebar.item icon="book-open-text" href="/">
+                <flux:sidebar.item icon="book-open-text" :href="route('sites.index')" :current="request()->routeIs('sites.index')" wire:navigate>
                     {{ __('Settings') }}
                 </flux:sidebar.item>
 
