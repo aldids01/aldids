@@ -3,10 +3,10 @@
     <head>
         @include('partials.head')
     </head>
-    <body class="min-h-screen antialiased bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 font-sans dark:bg-zinc-800">
-        <flux:sidebar sticky collapsible="mobile" class=" glass-effect border-r border-slate-700 dark:border-zinc-700 dark:bg-zinc-900">
+    <body class="min-h-screen bg-white dark:bg-zinc-800">
+        <flux:sidebar sticky collapsible="mobile" class="border-e border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900">
             <flux:sidebar.header>
-                <x-app-logo :sidebar="true" href="{{ route('dashboard') }}" wire:navigate />
+                <x-app-logo :sidebar="true" href="{{ route('dashboard') }}" wire:navigate/>
                 <flux:sidebar.collapse class="lg:hidden" />
             </flux:sidebar.header>
 

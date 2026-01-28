@@ -1,6 +1,5 @@
 @import 'tailwindcss';
 @import '../../vendor/livewire/flux/dist/flux.css';
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 /* Required by all components */
 @import '../../vendor/filament/support/resources/css/index.css';
@@ -26,14 +25,11 @@
 /* Required by widgets */
 @import '../../vendor/filament/widgets/resources/css/index.css';
 
-/*@variant dark (&:where(.dark, .dark *));*/
+@variant dark (&:where(.dark, .dark *));
 @source '../views';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../vendor/livewire/flux-pro/stubs/**/*.blade.php';
 @source '../../vendor/livewire/flux/stubs/**/*.blade.php';
-
-
-/*@custom-variant dark (&:where(.dark, .dark *));*/
 
 
 @theme {
@@ -51,8 +47,8 @@
     --color-zinc-900: #171717;
     --color-zinc-950: #0a0a0a;
 
-    --color-accent: var(--color-white);
-    --color-accent-content: var(--color-white);
+    --color-accent: var(--color-neutral-800);
+    --color-accent-content: var(--color-neutral-800);
     --color-accent-foreground: var(--color-white);
 }
 
@@ -88,40 +84,41 @@ textarea:focus[data-flux-control],
 select:focus[data-flux-control] {
     @apply outline-hidden ring-2 ring-accent ring-offset-2 ring-offset-accent-foreground;
 }
-.gradient-text {
-    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.glass-effect {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.hover-glow:hover {
-    box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
-}
-
-.animate-float {
-    animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-}
-
-.skill-bar {
-    position: relative;
-    overflow: hidden;
-}
-
-.skill-progress {
-    transition: width 2s ease-in-out;
-}
 /* \[:where(&)\]:size-4 {
     @apply size-4;
 } */
+.fi-btn {
+   color: var(--color-accent-foreground);
+    background-color: var(--color-accent);
+}
+
+.fi-color-primary{
+    @apply bg-purple-900 text-white;
+}
+/*.fi-input:focus-within {*/
+/*    --ring-color: #8b5cf6 !important;*/
+/*    border-color: #8b5cf6 !important;*/
+/*    box-shadow: 0 0 0 2px #8b5cf6 !important;*/
+/*}*/
+.fi-input-wrp{
+    @apply shadow-none ring-1 ring-black ring-offset-2 ring-offset-accent-foreground;
+}
+
+.fi-ta-ctn {
+    @apply bg-transparent;
+}
+.fi-modal{
+    @apply shadow-none ring-1 ring-black;
+}
+/*.fi-modal-header {*/
+/*    @apply bg-purple-900;*/
+/*}*/
+/*.fi-modal-content {*/
+/*    @apply bg-purple-950;*/
+/*}*/
+/*.fi-modal-footer {*/
+/*    @apply bg-purple-900;*/
+/*}*/
+.fi-badge{
+    @apply bg-purple-900 text-white;
+}
