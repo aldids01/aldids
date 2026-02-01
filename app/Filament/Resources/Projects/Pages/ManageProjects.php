@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Projects\Pages;
 
 use App\Filament\Resources\Projects\ProjectResource;
+use App\Filament\Resources\Projects\Widgets\ProjectsOverview;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ManageRecords;
 use Filament\Support\Enums\Width;
@@ -18,6 +19,13 @@ class ManageProjects extends ManageRecords
                 ->slideOver()
                 ->modalCancelAction(false)
                 ->modalWidth(Width::Small),
+        ];
+    }
+
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            ProjectsOverview::class,
         ];
     }
 }
