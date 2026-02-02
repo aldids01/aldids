@@ -153,6 +153,7 @@ class ProjectResource extends Resource
                     ->sortable(),
                 TextColumn::make('user.name')
                     ->searchable(),
+
 //                TextColumn::make('created_at')
 //                    ->dateTime()
 //                    ->sortable()

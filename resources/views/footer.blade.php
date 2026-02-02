@@ -68,7 +68,7 @@
 
         <div class="border-t border-slate-700 mt-8 pt-8 text-center">
             <p class="text-gray-400 text-sm">
-                © {{ date('Y') }} <a href="https:://aldids.ng" target="_blank">Alpha Digital Developers</a>. All rights reserved.
+                © {{ date('Y') }} <a href="/">Alpha Digital Developers</a>. All rights reserved.
             </p>
         </div>
     </div>
