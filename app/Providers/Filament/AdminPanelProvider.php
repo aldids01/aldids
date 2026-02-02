@@ -12,6 +12,7 @@ use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
 use Filament\Support\Enums\Width;
+use Filament\View\PanelsRenderHook;
 use Filament\Widgets\AccountWidget;
 use Filament\Widgets\FilamentInfoWidget;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
@@ -19,6 +20,7 @@ use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
 class AdminPanelProvider extends PanelProvider
@@ -37,7 +39,7 @@ class AdminPanelProvider extends PanelProvider
             ->userMenu(position: UserMenuPosition::Sidebar)
             ->maxContentWidth(Width::Full)
             ->sidebarFullyCollapsibleOnDesktop()
-            ->sidebarWidth('20')
+            ->sidebarWidth('12rem')
             ->simplePageMaxContentWidth(Width::Small)
             ->spa(hasPrefetching: true)
 //            ->unsavedChangesAlerts()
@@ -78,7 +80,11 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ])
+            ], isPersistent: true)
+            ->renderHook(
+                PanelsRenderHook::FOOTER,
+                fn(): string => Blade::render('admin-footer'),
+            )
             ->bootUsing(function (Panel $panel) {
                 // ...
             })

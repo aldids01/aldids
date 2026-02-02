@@ -9,3 +9,50 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+body.fi-body {
+    background: linear-gradient(to bottom right, #0f172a, #581c87, #0f172a) !important;
+}
+.fi-layout > .fi-main {
+    background-image: linear-gradient(to bottom right, #0f172a, #581c87, #0f172a) !important;
+    color: white !important;
+}
+
+/* To ensure the sidebar doesn't have a clashing background */
+.fi-sidebar {
+    background-color: transparent !important;
+}
+.gradient-text {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.skill-bar {
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-progress {
+    transition: width 2s ease-in-out;
+}

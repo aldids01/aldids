@@ -3,3 +3,49 @@
 @source '../../../../app/Filament/**/*';
 @source '../../../../resources/views/filament/**/*';
 @source '../../../../vendor/tapp/filament-progress-bar-column';
+body.fi-body {
+    @apply bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white;
+}
+.fi-topbar{
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);;
+}
+.fi-logo{
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.fi-sidebar{
+    @apply bg-purple-900 rounded-lg shadow-lg;
+}
+.fi-sidebar-item-btn{
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.fi-sidebar-item-btn:hover{
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+}
+.fi-sidebar-item{
+    &.fi-active{
+        &>.fi-sidebar-item-btn{
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
+        }
+    }
+}
+.fi-sidebar-item-label{
+    color: white;
+}
+.fi-icon{
+    color: white;
+}
+h1.fi-header-heading{
+    color: white;
+}
+.fi-icon{
+    @apply text-purple-500;
+}
+div.text-primary-500{
+    @apply text-purple-500;
+}

@@ -1,0 +1,74 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+@source '../../../../app/Filament/Home/**/*';
+@source '../../../../resources/views/filament/home/**/*';
+
+html {
+    scroll-behavior: smooth;
+}
+body.fi-body {
+    @apply bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white;
+}
+.fi-topbar{
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);;
+}
+
+.fi-logo{
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.fi-topbar-item-btn{
+    background: rgba(255, 255, 255, 0.1);
+}
+.fi-topbar-item-label{
+    color: white;
+}
+.fi-icon{
+    color: #06b6d4;
+}
+.fi-topbar-item-btn:hover{
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+}
+
+.fi-topbar-item:has(a[href*="login"]) {
+    margin-left: auto; /* Pushes it to the right if the container is flex */
+    width: max-content;
+}
+.gradient-text {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.skill-bar {
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-progress {
+    transition: width 2s ease-in-out;
+}
