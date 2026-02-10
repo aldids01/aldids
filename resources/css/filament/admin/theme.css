@@ -3,11 +3,11 @@
 @source '../../../../app/Filament/**/*';
 @source '../../../../resources/views/filament/**/*';
 @source '../../../../vendor/tapp/filament-progress-bar-column';
-body.fi-body {
-    @apply bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white;
-}
+/*.fi-body {*/
+/*    @apply bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white;*/
+/*}*/
 .fi-topbar{
-    background: rgba(255, 255, 255, 0.1);
+    @apply bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white;
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);;
 }
@@ -18,10 +18,20 @@ body.fi-body {
     background-clip: text;
 }
 .fi-sidebar{
-    @apply bg-purple-900 rounded-lg shadow-lg;
+    @apply bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white;
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
+
+.fi-input-wrp-label {
+    color: white !important;
+}
+
 .fi-sidebar-item-btn{
     background: rgba(255, 255, 255, 0.1);
+    .fi-sidebar-item-icon {
+        @apply text-white;
+    }
 }
 
 .fi-sidebar-item-btn:hover{
@@ -31,21 +41,24 @@ body.fi-body {
     &.fi-active{
         &>.fi-sidebar-item-btn{
             background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
+
+            .fi-sidebar-item-icon {
+                @apply text-white;
+            }
         }
     }
 }
 .fi-sidebar-item-label{
-    color: white;
-}
-.fi-icon{
-    color: white;
+   @apply via-purple-300 text-white;
 }
 h1.fi-header-heading{
-    color: white;
+    @apply text-purple-500;
 }
+
 .fi-icon{
     @apply text-purple-500;
 }
 div.text-primary-500{
     @apply text-purple-500;
 }
+
