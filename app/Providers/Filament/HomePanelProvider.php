@@ -38,6 +38,8 @@ class HomePanelProvider extends PanelProvider
                 'primary' => Color::Purple,
             ])
             ->topNavigation()
+            ->brandName('ALPHA DIGITAL DEVELOPERS')
+            ->favicon('/favicon.ico')
             ->navigationItems([
                 NavigationItem::make('About Us')
                     ->url(fn(): string => '#about')
