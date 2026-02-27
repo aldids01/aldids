@@ -3,17 +3,20 @@
 namespace App\Filament\Resources\Users;
 
 use App\Filament\Resources\Users\Pages\ManageUsers;
-use App\Model\User;
+use App\Models\User;
 use BackedEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
+use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Textarea;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
+use Filament\Support\Enums\Width;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -31,9 +34,22 @@ class UserResource extends Resource
         return $schema
             ->components([
                 TextInput::make('name')
-                    ->required()
-                    ->maxLength(255),
-            ]);
+                    ->required(),
+                TextInput::make('email')
+                    ->label('Email address')
+                    ->email()
+                    ->required(),
+                DateTimePicker::make('email_verified_at'),
+                TextInput::make('password')
+                    ->password()
+                    ->revealable()
+                    ->required(),
+                Textarea::make('two_factor_secret')
+                    ->columnSpanFull(),
+                Textarea::make('two_factor_recovery_codes')
+                    ->columnSpanFull(),
+                DateTimePicker::make('two_factor_confirmed_at'),
+            ])->columns(1);
     }
 
     public static function infolist(Schema $schema): Schema
@@ -41,7 +57,27 @@ class UserResource extends Resource
         return $schema
             ->components([
                 TextEntry::make('name'),
-            ]);
+                TextEntry::make('email')
+                    ->label('Email address'),
+                TextEntry::make('email_verified_at')
+                    ->dateTime()
+                    ->placeholder('-'),
+                TextEntry::make('two_factor_secret')
+                    ->placeholder('-')
+                    ->columnSpanFull(),
+                TextEntry::make('two_factor_recovery_codes')
+                    ->placeholder('-')
+                    ->columnSpanFull(),
+                TextEntry::make('two_factor_confirmed_at')
+                    ->dateTime()
+                    ->placeholder('-'),
+                TextEntry::make('created_at')
+                    ->dateTime()
+                    ->placeholder('-'),
+                TextEntry::make('updated_at')
+                    ->dateTime()
+                    ->placeholder('-'),
+            ])->columns(1);
     }
 
     public static function table(Table $table): Table
@@ -51,13 +87,34 @@ class UserResource extends Resource
             ->columns([
                 TextColumn::make('name')
                     ->searchable(),
+                TextColumn::make('email')
+                    ->label('Email address')
+                    ->searchable(),
+                TextColumn::make('email_verified_at')
+                    ->dateTime()
+                    ->sortable(),
+                TextColumn::make('two_factor_confirmed_at')
+                    ->dateTime()
+                    ->sortable(),
+                TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
             ])
             ->recordActions([
-                ViewAction::make(),
-                EditAction::make(),
+                ViewAction::make()
+                    ->modalWidth(Width::Medium)
+                    ->slideOver(),
+                EditAction::make()
+                    ->modalWidth(Width::Medium)
+                    ->slideOver(),
                 DeleteAction::make(),
             ])
             ->toolbarActions([
