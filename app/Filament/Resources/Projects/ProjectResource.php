@@ -18,16 +18,15 @@ use Filament\Actions\ViewAction;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Infolists\Components\RepeatableEntry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Resources\Resource;
+use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Schema;
 use Filament\Support\Enums\Size;
 use Filament\Support\Enums\Width;
 use Filament\Support\Icons\Heroicon;
-use Filament\Tables\Columns\Layout\Split;
-use Filament\Tables\Columns\Layout\Stack;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\TrashedFilter;
 use Filament\Tables\Table;
@@ -50,6 +49,24 @@ class ProjectResource extends Resource
                 TextInput::make('name')
                     ->required(),
                 TextInput::make('company'),
+                TextArea::make('description')
+                    ->rows(5)
+                    ->columnSpanFull()
+                    ->required(),
+                Select::make('user_id')
+                    ->relationship('user', 'name')
+                    ->default(auth()->id())
+                    ->required(),
+                Select::make('category_id')
+                    ->relationship('category', 'name')
+                    ->createOptionForm([
+                        TextInput::make('name')
+                            ->required(),
+                        TextInput::make('description')
+                            ->nullable(),
+                    ])
+                    ->required(),
+
                 Repeater::make('technologies')
                     ->grid(2)
                     ->reorderable(false)
@@ -76,13 +93,13 @@ class ProjectResource extends Resource
                     ->default('0'),
                 TextInput::make('status')
                     ->required(),
-                DatePicker::make('from')
-                    ->required(),
-                DatePicker::make('to')
-                    ->required(),
-                Select::make('user_id')
-                    ->relationship('user', 'name')
-                    ->required(),
+                Grid::make()
+                    ->schema([
+                        DatePicker::make('from')
+                            ->required(),
+                        DatePicker::make('to')
+                            ->required(),
+                    ])->columns(2),
             ]);
     }
 
@@ -96,6 +113,8 @@ class ProjectResource extends Resource
                     ->badge(),
                 TextEntry::make('company')
                     ->placeholder('-'),
+                TextEntry::make('category.name')
+                    ->label('Category'),
                 TextEntry::make('client'),
                 TextEntry::make('phone'),
                 TextEntry::make('mobile')
@@ -171,17 +190,17 @@ class ProjectResource extends Resource
                 TrashedFilter::make(),
             ])
             ->recordActions([
-               ActionGroup::make([
-                   ViewAction::make()
-                       ->slideOver()
-                       ->modalWidth(Width::Small),
-                   EditAction::make()
-                       ->slideOver()
-                       ->modalWidth(Width::Small),
-                   DeleteAction::make(),
-                   ForceDeleteAction::make(),
-                   RestoreAction::make(),
-               ])->button()->size(Size::Small)
+                ActionGroup::make([
+                    ViewAction::make()
+                        ->slideOver()
+                        ->modalWidth(Width::Small),
+                    EditAction::make()
+                        ->slideOver()
+                        ->modalWidth(Width::Small),
+                    DeleteAction::make(),
+                    ForceDeleteAction::make(),
+                    RestoreAction::make(),
+                ])->button()->size(Size::Small)
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
@@ -206,6 +225,4 @@ class ProjectResource extends Resource
                 SoftDeletingScope::class,
             ]);
     }
-
-
 }

@@ -147,6 +147,7 @@
         </div>
     </section>
 
+
     <!-- Projects Section -->
     <section id="projects" class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -157,54 +158,9 @@
                 </p>
             </div>
 
+
             <!-- Project Filters -->
-            <div class="flex justify-center mb-12">
-                <div class="flex flex-wrap gap-4 bg-slate-800/50 rounded-full p-2">
-                    <button class="filter-btn px-6 py-2 rounded-full bg-primary text-white font-medium transition-all duration-300" data-filter="all">All Projects</button>
-                    <button class="filter-btn px-6 py-2 rounded-full text-gray-400 hover:text-white font-medium transition-all duration-300" data-filter="Web Development">Web Apps</button>
-                    <button class="filter-btn px-6 py-2 rounded-full text-gray-400 hover:text-white font-medium transition-all duration-300" data-filter="Mobile App">Mobile</button>
-                    <button class="filter-btn px-6 py-2 rounded-full text-gray-400 hover:text-white font-medium transition-all duration-300" data-filter="Web Platform">Platforms</button>
-                </div>
-            </div>
-
-            <!-- Projects Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                @foreach($data['projects'] as $project)
-                    <div class="project-item glass-effect rounded-2xl overflow-hidden hover-glow transition-all duration-300 group" data-category="{{ $project['category'] }}">
-                        <div class="relative overflow-hidden">
-                            <img src="{{ $project['image'] }}"
-                                 alt="{{ $project['title'] }}"
-                                 class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <div class="absolute bottom-4 left-4 right-4">
-                                    <div class="flex space-x-3">
-                                        <a href="{{ $project['github'] }}" class="bg-white/20 backdrop-blur-sm p-3 rounded-full text-white hover:bg-white/30 transition-all duration-300">
-                                            <i class="fab fa-github text-lg"></i>
-                                        </a>
-                                        <a href="{{ $project['demo'] }}" class="bg-primary/80 backdrop-blur-sm p-3 rounded-full text-white hover:bg-primary transition-all duration-300">
-                                            <i class="fas fa-external-link-alt text-lg"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6">
-                            <div class="flex items-center justify-between mb-3">
-                                <h3 class="text-xl font-bold text-white">{{ $project['title'] }}</h3>
-                                <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-xs font-medium">{{ $project['category'] }}</span>
-                            </div>
-                            <p class="text-gray-400 mb-4 leading-relaxed">{{ $project['description'] }}</p>
-
-                            <div class="flex flex-wrap gap-2">
-                                @foreach($project['technologies'] as $tech)
-                                    <span class="px-3 py-1 bg-slate-700 text-gray-300 rounded-full text-xs font-medium">{{ $tech }}</span>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
+            @livewire('projects')
 
             <div class="text-center mt-12">
                 <a href="#contact" class="bg-purple-300 px-8 py-4 rounded-full text-white font-semibold hover:from-secondary hover:to-primary transition-all duration-300 hover-glow">
@@ -330,37 +286,7 @@
 
                 <!-- Contact Form -->
                 <div class="glass-effect rounded-2xl p-8">
-                    <form id="contact-form" class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name</label>
-                                <input type="text" id="name" name="name" required
-                                       class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors">
-                            </div>
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
-                                <input type="email" id="email" name="email" required
-                                       class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors">
-                            </div>
-                        </div>
-
-                        <div>
-                            <label for="subject" class="block text-sm font-medium text-gray-300 mb-2">Subject</label>
-                            <input type="text" id="subject" name="subject" required
-                                   class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors">
-                        </div>
-
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
-                            <textarea id="message" name="message" rows="6" required
-                                      class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors resize-none"></textarea>
-                        </div>
-
-                        <button type="submit"
-                                class="w-full bg-purple-400 py-4 rounded-lg text-white font-semibold hover:from-secondary hover:to-primary transition-all duration-300 hover-glow">
-                            Send Message
-                        </button>
-                    </form>
+                    @livewire('contacts')
                 </div>
             </div>
         </div>

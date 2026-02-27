@@ -29,4 +29,9 @@ class Project extends Model
             'technologies' => 'array',
         ];
     }
+
+    public function category():BelongsTo
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

@@ -16,16 +16,15 @@ class ManageProjects extends ManageRecords
     {
         return [
             CreateAction::make()
+                ->modalWidth(Width::Large)
                 ->slideOver()
-                ->modalCancelAction(false)
-                ->modalWidth(Width::Small),
         ];
     }
 
     protected function getHeaderWidgets(): array
     {
         return [
-            ProjectsOverview::class,
+           ProjectsOverview::class,
         ];
     }
 }

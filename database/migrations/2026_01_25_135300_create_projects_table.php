@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('company')->nullable();
+            $table->text('description')->nullable();
             $table->json('technologies');
             $table->string('client');
             $table->string('phone');
@@ -26,6 +27,7 @@ return new class extends Migration
             $table->date('from');
             $table->date('to');
             $table->foreignIdFor(\App\Models\User::class)->constrained();
+            $table->foreignIdFor(\App\Models\Category::class)->constrained();
             $table->timestamps();
             $table->softDeletes();
         });

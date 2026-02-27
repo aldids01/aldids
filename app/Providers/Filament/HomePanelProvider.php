@@ -4,6 +4,7 @@ namespace App\Providers\Filament;
 
 use App\Filament\Home\Pages\Home;
 use Filament\Actions\Action;
+use Filament\Facades\Filament;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -56,6 +57,12 @@ class HomePanelProvider extends PanelProvider
                 NavigationItem::make('Contact')
                     ->url(fn(): string => '#contact')
                     ->icon(Heroicon::OutlinedEnvelope),
+            ])
+            ->userMenuItems([
+                Action::make('settings')
+                    ->label('Admin')
+                    ->url(fn (): string => Dashboard::getUrl(panel: 'admin'))
+                    ->icon('heroicon-o-cog-6-tooth'),
             ])
             ->registerErrorNotification(
                 title: 'An error occurred',

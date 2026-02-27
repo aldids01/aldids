@@ -8,6 +8,23 @@ html {
 body.fi-body {
     @apply bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white;
 }
+.fi-ta-ctn {
+    @apply bg-transparent text-white;
+    box-shadow: none !important;
+    border: 1px solid white !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.fi-ta-filters-before-content-ctn{
+    @apply bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white;
+}
+
+.fi-ta-filters-heading, .fi-fo-field-label-content, .fi-pagination-overview, legend{
+    color: white;
+}
+.fi-input-wrp-label {
+    color: #302b63 !important;
+}
 .fi-topbar{
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
@@ -50,7 +67,15 @@ body.fi-body {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
+.fi-ta-record {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
 
+.fi-ta-record:hover {
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+}
 .hover-glow:hover {
     box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
 }

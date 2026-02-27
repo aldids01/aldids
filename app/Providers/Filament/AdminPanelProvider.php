@@ -2,6 +2,8 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Home\Pages\Home;
+use Filament\Actions\Action;
 use Filament\Enums\UserMenuPosition;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -12,6 +14,7 @@ use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
 use Filament\Support\Enums\Width;
+use Filament\Support\Icons\Heroicon;
 use Filament\View\PanelsRenderHook;
 use Filament\Widgets\AccountWidget;
 use Filament\Widgets\FilamentInfoWidget;
@@ -33,6 +36,7 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->viteTheme('resources/css/filament/admin/theme.css')
             ->login()
+            ->profile(isSimple: false)
 //            ->registration()
             ->colors([
                 'primary' => Color::Purple,
@@ -55,6 +59,12 @@ class AdminPanelProvider extends PanelProvider
                 body: 'A record you are looking for does not exist.',
                 statusCode: 404,
             )
+            ->userMenuItems([
+                Action::make('settings')
+                    ->label('Website')
+                    ->url(fn (): string => Home::getUrl(panel: 'home'))
+                    ->icon(Heroicon::GlobeAlt),
+            ])
             ->favicon('/favicon.ico')
             ->brandName('ALPHA DIGITAL DEVELOPERS')
 //            ->brandLogo('/apple-touch-icon.png')
