@@ -64,15 +64,6 @@ class HomePanelProvider extends PanelProvider
                     ->url(fn (): string => Dashboard::getUrl(panel: 'admin'))
                     ->icon('heroicon-o-cog-6-tooth'),
             ])
-            ->registerErrorNotification(
-                title: 'An error occurred',
-                body: 'Please try again later.',
-            )
-            ->registerErrorNotification(
-                title: 'Record not found',
-                body: 'A record you are looking for does not exist.',
-                statusCode: 404,
-            )
             ->maxContentWidth(Width::Full)
             ->discoverResources(in: app_path('Filament/Home/Resources'), for: 'App\Filament\Home\Resources')
             ->discoverPages(in: app_path('Filament/Home/Pages'), for: 'App\Filament\Home\Pages')
