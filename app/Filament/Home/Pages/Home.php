@@ -3,7 +3,6 @@
 namespace App\Filament\Home\Pages;
 
 use Filament\Pages\Dashboard as BaseDashboard;
-use Illuminate\Contracts\View\View;
 
 class Home extends BaseDashboard
 {
