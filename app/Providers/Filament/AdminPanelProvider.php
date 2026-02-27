@@ -50,6 +50,15 @@ class AdminPanelProvider extends PanelProvider
 //            ->unsavedChangesAlerts()
             ->databaseTransactions()
 //            ->strictAuthorization()
+            ->registerErrorNotification(
+                title: 'An error occurred',
+                body: 'Please try again later.',
+            )
+            ->registerErrorNotification(
+                title: 'Record not found',
+                body: 'A record you are looking for does not exist.',
+                statusCode: 404,
+            )
             ->userMenuItems([
                 Action::make('settings')
                     ->label('Website')
