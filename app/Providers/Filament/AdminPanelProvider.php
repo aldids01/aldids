@@ -33,7 +33,7 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->viteTheme('resources/css/filament/admin/theme.css')
             ->login()
-            ->registration()
+//            ->registration()
             ->colors([
                 'primary' => Color::Purple,
             ])
