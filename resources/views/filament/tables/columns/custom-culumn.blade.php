@@ -7,7 +7,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div class="absolute bottom-4 left-4 right-4">
                     <div class="flex space-x-3">
-                        <a href="{{ $project->url ?? '' }}" class="bg-primary/80 backdrop-blur-sm p-3 rounded-full text-white hover:bg-primary transition-all duration-300">
+                        <a href="{{ $project->url ?? '' }}" target="_blank" class="bg-primary/80 backdrop-blur-sm p-3 rounded-full text-white hover:bg-primary transition-all duration-300">
                             <i class="fas fa-external-link-alt text-lg"></i>
                         </a>
                     </div>
