@@ -49,6 +49,12 @@ class ProjectResource extends Resource
                 TextInput::make('name')
                     ->required(),
                 TextInput::make('company'),
+                TextInput::make('url')
+                    ->required()
+                    ->url(),
+                TextInput::make('image_url')
+                    ->required()
+                    ->url(),
                 TextArea::make('description')
                     ->rows(5)
                     ->columnSpanFull()
