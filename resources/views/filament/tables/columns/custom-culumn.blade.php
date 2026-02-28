@@ -1,16 +1,13 @@
 <div {{ $getExtraAttributeBag() }} class="gap-8">
     <div class="project-item glass-effect rounded-2xl overflow-hidden hover-glow transition-all duration-300 group" >
         <div class="relative overflow-hidden">
-            <img src="{{ $project['image'] ?? 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop' }}"
+            <img src="{{ $project->image_url }}"
                  alt="{{ $project['title'] ?? ''}}"
                  class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div class="absolute bottom-4 left-4 right-4">
                     <div class="flex space-x-3">
-                        <a href="{{ $project['github'] ?? '' }}" class="bg-white/20 backdrop-blur-sm p-3 rounded-full text-white hover:bg-white/30 transition-all duration-300">
-                            <i class="fab fa-github text-lg"></i>
-                        </a>
-                        <a href="{{ $project['demo'] ?? '' }}" class="bg-primary/80 backdrop-blur-sm p-3 rounded-full text-white hover:bg-primary transition-all duration-300">
+                        <a href="{{ $project->url ?? '' }}" class="bg-primary/80 backdrop-blur-sm p-3 rounded-full text-white hover:bg-primary transition-all duration-300">
                             <i class="fas fa-external-link-alt text-lg"></i>
                         </a>
                     </div>
