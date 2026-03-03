@@ -3,6 +3,8 @@
 namespace App\Providers\Filament;
 
 use App\Filament\Home\Pages\Home;
+use App\Models\Contact;
+use App\Observers\ContactObserver;
 use Filament\Actions\Action;
 use Filament\Enums\UserMenuPosition;
 use Filament\Http\Middleware\Authenticate;
@@ -97,7 +99,7 @@ class AdminPanelProvider extends PanelProvider
                 fn(): string => Blade::render('admin-footer'),
             )
             ->bootUsing(function (Panel $panel) {
-                // ...
+                Contact::observe(ContactObserver::class);
             })
             ->viteTheme('resources/css/filament/admin/theme.css');
     }
