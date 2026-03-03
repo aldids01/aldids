@@ -15,6 +15,8 @@ class ContactObserver
     {
         Mail::to('nchandoms@gmail.com')
             ->queue(new ContactFormMail($contact->toArray()));
+
+        $contact->update(['status' => 'Email Sent']);
     }
 
     /**

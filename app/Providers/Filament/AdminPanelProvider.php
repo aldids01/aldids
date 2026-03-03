@@ -46,6 +46,7 @@ class AdminPanelProvider extends PanelProvider
             ->userMenu(position: UserMenuPosition::Sidebar)
             ->maxContentWidth(Width::Full)
             ->sidebarFullyCollapsibleOnDesktop()
+            ->databaseNotifications()
             ->sidebarWidth('12rem')
             ->simplePageMaxContentWidth(Width::Small)
             ->spa(hasPrefetching: true)
