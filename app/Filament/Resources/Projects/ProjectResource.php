@@ -131,6 +131,7 @@ class ProjectResource extends Resource
                 TextEntry::make('budget')
                     ->numeric(),
                 TextEntry::make('progress'),
+
                 TextEntry::make('status'),
 
                 TextEntry::make('from')
