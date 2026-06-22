@@ -20,6 +20,7 @@ class ExperienceForm
 
                 TextInput::make('company')
                     ->required(),
+
                 Textarea::make('address')
                     ->required(),
                 Textarea::make('description')
