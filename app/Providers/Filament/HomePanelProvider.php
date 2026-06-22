@@ -4,12 +4,11 @@ namespace App\Providers\Filament;
 
 use App\Filament\Home\Pages\Home;
 use Filament\Actions\Action;
-use Filament\Facades\Filament;
+use Filament\Enums\ThemeMode;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
-use Filament\Navigation\NavigationGroup;
 use Filament\Navigation\NavigationItem;
 use Filament\Pages\Dashboard;
 use Filament\Panel;
@@ -33,8 +32,11 @@ class HomePanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
+            ->default()
             ->id('home')
             ->path('/')
+            ->viteTheme('resources/css/filament/home/theme.css')
+            ->defaultThemeMode(ThemeMode::Dark)
             ->colors([
                 'primary' => Color::Purple,
             ])
@@ -95,9 +97,9 @@ class HomePanelProvider extends PanelProvider
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
             ])
-            ->bootUsing(function (Panel $panel) {
-                // ...
-            })
+            ->authMiddleware([
+//                Authenticate::class,
+            ])
             ->renderHook(
                 PanelsRenderHook::FOOTER,
                 fn(): string => Blade::render('footer'),
@@ -111,9 +113,6 @@ class HomePanelProvider extends PanelProvider
                         </a>
                     @endguest
                 '),
-            )
-            ->authMiddleware([
-//                Authenticate::class,
-            ])->viteTheme('resources/css/filament/home/theme.css');
+            );
     }
 }

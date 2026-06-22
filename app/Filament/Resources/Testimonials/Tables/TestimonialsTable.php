@@ -19,6 +19,7 @@ use Filament\Tables\Columns\Layout\Stack;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\TrashedFilter;
 use Filament\Tables\Table;
+use l3aro\FilamentRatingStar\Components\StarColumn;
 use Mokhosh\FilamentRating\Columns\RatingColumn;
 
 class TestimonialsTable
@@ -38,7 +39,7 @@ class TestimonialsTable
                         ->columnSpanFull()
                         ->color('primary')
                         ->searchable(),
-                    RatingColumn::make('star'),
+                    StarColumn::make('star'),
                     TextColumn::make('description'),
                     Split::make([
                         TextColumn::make('created_at')

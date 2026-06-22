@@ -6,6 +6,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
+use l3aro\FilamentRatingStar\Components\StarInput;
 use Mokhosh\FilamentRating\Components\Rating;
 use Mokhosh\FilamentRating\RatingTheme;
 
@@ -22,10 +23,8 @@ class TestimonialForm
                     ->required(),
                 TextInput::make('position')
                     ->required(),
-                Rating::make('star')
-                    ->label('Rating')
-                    ->size('xl')
-                    ->theme(RatingTheme::Simple),
+                StarInput::make('star')
+                    ->label('Rating'),
                 Textarea::make('description')
                     ->required()
                     ->columnSpanFull(),
