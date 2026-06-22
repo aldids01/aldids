@@ -132,6 +132,7 @@ class ProjectResource extends Resource
                     ->numeric(),
                 TextEntry::make('progress'),
                 TextEntry::make('status'),
+
                 TextEntry::make('from')
                     ->date(),
                 TextEntry::make('to')
