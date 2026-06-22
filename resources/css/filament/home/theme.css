@@ -92,7 +92,7 @@
 .fi-body {
     background-color: var(--theme-body-bg);
     color: var(--theme-slate);
-    @apply bg-gradient-to-br from-slate-900 to-slate-900 text-white;
+    /*@apply bg-gradient-to-br from-slate-900 to-slate-900 text-white;*/
 }
 
 
