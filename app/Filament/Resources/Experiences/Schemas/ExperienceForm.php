@@ -17,6 +17,7 @@ class ExperienceForm
             ->components([
                 TextInput::make('title')
                     ->required(),
+
                 TextInput::make('company')
                     ->required(),
                 Textarea::make('address')
