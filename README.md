@@ -1,59 +1,166 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# ALDIDS Portfolio
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+ALDIDS is a Laravel 12 portfolio and business website for Alpha Digital Developers. It combines a public Filament-powered landing page with an authenticated admin panel for managing portfolio content, contacts, users, and supporting website data.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Public home page built with Filament and custom Blade sections.
+- Admin dashboard at `/admin` with Filament resources.
+- Portfolio project listing with Livewire and category filters.
+- Contact form powered by Livewire and Filament forms.
+- Queued email notification when a contact message is submitted.
+- Admin resources for contacts, experiences, projects, skills, testimonials, and users.
+- Custom Filament themes for the public site and admin panel.
+- Vite, Tailwind CSS, and Laravel Vite integration for frontend assets.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Tech Stack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- PHP 8.2+
+- Laravel 12
+- Filament 5
+- Livewire
+- MySQL or another Laravel-supported database
+- Tailwind CSS 4
+- Vite 7
+- PHPUnit 11
 
-## Learning Laravel
+## Requirements
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+Before running the project, install:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- PHP 8.2 or newer
+- Composer
+- Node.js and npm
+- A database supported by Laravel
 
-## Laravel Sponsors
+## Installation
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Clone the repository and install dependencies:
 
-### Premium Partners
+```bash
+git clone https://github.com/aldids01/aldids.git
+cd aldids
+composer install
+npm install
+```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Create the environment file and application key:
 
-## Contributing
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Update `.env` with your local database, mail, queue, and app settings. At minimum, configure:
 
-## Code of Conduct
+```env
+APP_NAME="ALPHA DIGITAL DEVELOPERS"
+APP_URL=http://localhost:8000
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=aldids
+DB_USERNAME=root
+DB_PASSWORD=
 
-## Security Vulnerabilities
+QUEUE_CONNECTION=database
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Run migrations:
 
-## License
+```bash
+php artisan migrate
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Build frontend assets:
+
+```bash
+npm run build
+```
+
+## Development
+
+Start the Laravel server:
+
+```bash
+php artisan serve
+```
+
+In another terminal, start Vite:
+
+```bash
+npm run dev
+```
+
+If you use queued mail or notifications, start the queue worker:
+
+```bash
+php artisan queue:work
+```
+
+The project also includes a combined development script:
+
+```bash
+composer run dev
+```
+
+## Main URLs
+
+- Public website: `/`
+- Admin panel: `/admin`
+- Admin login: `/admin/login`
+
+## Admin Content
+
+The admin panel provides resources for:
+
+- Contacts
+- Experiences
+- Projects
+- Skills
+- Testimonials
+- Users
+
+Project records can be categorized and displayed on the public website through the Livewire-powered project section.
+
+## Contact Form
+
+Contact submissions are stored in the database through the `Contact` model. A contact observer queues an email notification after a new message is created, then updates the contact status to `Email Sent`.
+
+Make sure your mail and queue settings are configured correctly in `.env` before relying on this workflow in production.
+
+## Testing
+
+Run the test suite with:
+
+```bash
+composer test
+```
+
+Or directly:
+
+```bash
+php artisan test
+```
+
+## Deployment Notes
+
+For production deployments:
+
+```bash
+composer install --no-dev --optimize-autoloader
+npm ci
+npm run build
+php artisan migrate --force
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+```
+
+Also configure a queue worker, scheduler, mail transport, storage permissions, and your web server document root to point to the `public` directory.
+
+## Repository
+
+- GitHub: https://github.com/aldids01/aldids
+- Current release tag: `v2.1`
