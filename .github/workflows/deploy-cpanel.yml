@@ -22,12 +22,6 @@ jobs:
           extensions: mbstring, bcmath, ctype, fileinfo, json, openssl, pdo, tokenizer, xml
           coverage: none
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: npm
-
       - name: Install Composer dependencies
         run: composer install --no-dev --prefer-dist --no-interaction --optimize-autoloader
 
