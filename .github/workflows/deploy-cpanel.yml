@@ -40,6 +40,18 @@ jobs:
           mkdir -p storage/framework/views
           mkdir -p storage/logs
 
+      - name: Generate Laravel environment file
+        env:
+          APP_KEY: ${{ secrets.APP_KEY }}
+        run: |
+          cp .env.example .env
+
+          if [ -n "$APP_KEY" ]; then
+            php -r '$path = ".env"; $key = getenv("APP_KEY"); $env = file_get_contents($path); $env = preg_replace("/^APP_KEY=.*/m", "APP_KEY=".$key, $env); file_put_contents($path, $env);'
+          else
+            php artisan key:generate --force
+          fi
+
       - name: Deploy files to cPanel
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
@@ -51,7 +63,6 @@ jobs:
             **/.git*
             **/.git*/**
             **/.github/**
-            **/.env
             **/node_modules/**
              **/vendor/**
             **/tests/**
